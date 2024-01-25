@@ -4,24 +4,31 @@ Composition of containers for using Nextcloud
 
 ## How to use
 
-Just clone this repo then go to folder with sources
+### Clone repo and open its directory
 
-    git clone https://github.com/EvilFreelancer/docker-nextcloud.git
-    cd docker-nextcloud
+```sh
+git clone https://github.com/rudyson/nextcloud_docker-compose.git
+cd nextcloud_docker-compose
+```
 
-Copy dist configs and fix your parameters if need
+### Copy dist env files and provide your parameters
 
-    cp -v docker-compose.yml.dist docker-compose.yml
-    cp -v configs/nginx/conf.d/default.conf.dist configs/nginx/conf.d/default.conf
+```sh
+cp -v mariadb.dist.env mariadb.env
+cp -v phpmyadmin.dist.env phpmyadmin.env
+```
 
-Start composition of containers
+### Start composition of containers
 
-    docker-compose up -d
+```sh
+docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
+```
 
-Go to http://localhost and install the system.
+Go to [http://localhost](http://127.0.0.1:80) and install the system.
 
 ## Links
 
-* https://nextcloud.com/
-* https://github.com/nextcloud
-* https://hub.docker.com/_/nextcloud/
+* [Fork source](https://github.com/EvilFreelancer/docker-nextcloud)
+* [Nextcloud website](https://nextcloud.com/)
+* [Nextcloud on Github](https://github.com/nextcloud)
+* [Nextcloud on Docker Hub](https://hub.docker.com/_/nextcloud/)
